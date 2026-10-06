@@ -1,0 +1,24 @@
+artifact_path: file:C:/Downloads/ibm-aiml-project/mlruns/1/models/m-5bae45c98e354ccd911504f37cda5761/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.14.7
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types:
+    - sklearn.tree._tree.Tree
+mlflow_version: 3.16.1
+model_id: m-5bae45c98e354ccd911504f37cda5761
+model_size_bytes: 22621745
+model_uuid: m-5bae45c98e354ccd911504f37cda5761
+prompts: null
+run_id: fbb8a695d07e4d66bc91a266d9b79b5a
+utc_time_created: '2026-10-06 15:19:12.172228'

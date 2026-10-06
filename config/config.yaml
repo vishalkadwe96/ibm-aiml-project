@@ -1,0 +1,88 @@
+# ================================================================
+# IBM Enterprise AI/ML Platform — Master Configuration
+# ================================================================
+
+project:
+  name: "IBM Enterprise AI/ML Intelligence Platform"
+  version: "2.0.0"
+  author: "IBM AI Research Team"
+  description: "Enterprise-grade AI/ML platform for document intelligence, anomaly detection, and predictive analytics"
+
+# ── Data Configuration ───────────────────────────────────────────
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  artifacts_path: "data/artifacts"
+  batch_size: 512
+  max_features: 5000
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+  target_column: "label"
+
+# ── Model Configuration ──────────────────────────────────────────
+models:
+  output_path: "models/saved"
+  experiment_tracking: true
+  mlflow_uri: "http://localhost:5000"
+  
+  anomaly_detection:
+    contamination: 0.05
+    n_estimators: 200
+    random_state: 42
+    algorithms:
+      - isolation_forest
+      - lof
+      - autoencoder
+      - one_class_svm
+
+  classification:
+    algorithms:
+      - xgboost
+      - lightgbm
+      - random_forest
+      - neural_network
+    hyperparameter_tuning:
+      enabled: true
+      n_trials: 100
+      timeout: 600
+      
+  nlp:
+    transformer_model: "sentence-transformers/all-MiniLM-L6-v2"
+    max_length: 512
+    embedding_dim: 384
+    clustering_min_cluster_size: 5
+
+  time_series:
+    forecast_horizon: 30
+    seasonality_mode: "multiplicative"
+    changepoint_prior_scale: 0.05
+
+# ── API Configuration ────────────────────────────────────────────
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  reload: false
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+  rate_limit: 100
+  timeout: 30
+
+# ── IBM Watson Configuration ─────────────────────────────────────
+ibm_watson:
+  url: "${WATSON_URL}"
+  api_key: "${WATSON_API_KEY}"
+  project_id: "${WATSON_PROJECT_ID}"
+  deployment_space_id: "${WATSON_DEPLOYMENT_SPACE_ID}"
+  foundation_model_id: "ibm/granite-13b-instruct-v2"
+
+# ── Logging Configuration ────────────────────────────────────────
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {module}:{function}:{line} | {message}"
+  file: "logs/platform.log"
+  rotation: "500 MB"
+  retention: "10 days"
+  colorize: true

@@ -1,0 +1,22 @@
+artifact_path: file:C:/Downloads/ibm-aiml-project/mlruns/1/models/m-4d03ece6182d44d3ba7d0fdd7047bc4f/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.14.7
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: ubj
+    xgb_version: 3.4.1
+mlflow_version: 3.16.1
+model_id: m-4d03ece6182d44d3ba7d0fdd7047bc4f
+model_size_bytes: 6939656
+model_uuid: m-4d03ece6182d44d3ba7d0fdd7047bc4f
+prompts: null
+run_id: 115539e82f984759b70eaececd1f812a
+utc_time_created: '2026-10-06 15:05:06.114794'

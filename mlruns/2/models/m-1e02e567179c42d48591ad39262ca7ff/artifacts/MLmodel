@@ -1,0 +1,27 @@
+artifact_path: file:C:/Downloads/ibm-aiml-project/mlruns/2/models/m-1e02e567179c42d48591ad39262ca7ff/artifacts
+flavors:
+  lightgbm:
+    code: null
+    data: model.skops
+    lgb_version: 4.7.0
+    model_class: lightgbm.sklearn.LGBMClassifier
+    serialization_format: skops
+    skops_trusted_types:
+    - lightgbm.basic.Booster
+    - lightgbm.sklearn.LGBMClassifier
+    - collections.OrderedDict
+    - lightgbm.sklearn.LGBMRegressor
+  python_function:
+    data: model.skops
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.14.7
+mlflow_version: 3.16.1
+model_id: m-1e02e567179c42d48591ad39262ca7ff
+model_size_bytes: 573525
+model_uuid: m-1e02e567179c42d48591ad39262ca7ff
+prompts: null
+run_id: 6b8cfd6025dc4d44bfd078b277ab9551
+utc_time_created: '2026-10-06 16:13:14.282371'

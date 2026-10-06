@@ -1,0 +1,172 @@
+2026-10-06 20:25:18.106 | INFO     | __main__:main:71 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:18.107 | INFO     | __main__:main:72 - STEP 1/6 — Data Ingestion & Quality Analysis
+2026-10-06 20:25:18.108 | INFO     | __main__:main:73 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:18.376 | SUCCESS  | data_pipeline:generate_synthetic_dataset:159 - Generated synthetic dataset: 10,000 rows, 37 cols, 300 anomalies
+2026-10-06 20:25:18.541 | INFO     | data_pipeline:run:205 - Data Quality Report | Rows: 10,000 | Missing cols: 31 | Duplicates: 0
+2026-10-06 20:25:18.542 | INFO     | __main__:main:90 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:18.543 | INFO     | __main__:main:91 - STEP 2/6 — Feature Engineering
+2026-10-06 20:25:18.543 | INFO     | __main__:main:92 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:18.573 | DEBUG    | data_pipeline:add_temporal_features:255 - Added 8 temporal features from 'timestamp'
+2026-10-06 20:25:18.637 | SUCCESS  | __main__:main:99 - Feature engineering complete: 51 total features
+2026-10-06 20:25:18.637 | INFO     | __main__:main:104 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:18.638 | INFO     | __main__:main:105 - STEP 3/6 — Preprocessing Pipeline
+2026-10-06 20:25:18.638 | INFO     | __main__:main:106 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:29.019 | SUCCESS  | data_pipeline:build:346 - Preprocessing complete | Input: (10000, 47) → Output: (10000, 56)
+2026-10-06 20:25:29.054 | INFO     | data_pipeline:save:358 - Preprocessor saved → models/saved/preprocessor.joblib
+2026-10-06 20:25:29.054 | SUCCESS  | __main__:main:119 - Train: (7200, 56) | Val: (800, 56) | Test: (2000, 56)
+2026-10-06 20:25:29.055 | INFO     | __main__:main:124 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:29.055 | INFO     | __main__:main:125 - STEP 4/6 — Ensemble Model Training
+2026-10-06 20:25:29.055 | INFO     | __main__:main:126 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:25:33.208 | INFO     | models:train_all:400 - Training xgboost...
+2026-10-06 20:26:28.488 | SUCCESS  | models:train_all:423 -   xgboost                   | CV F1: 0.7955±0.0113 | Test F1: 0.8034
+2026-10-06 20:27:55.677 | INFO     | __main__:main:75 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:27:55.678 | INFO     | __main__:main:76 - STEP 1/6 — Data Ingestion & Quality Analysis
+2026-10-06 20:27:55.679 | INFO     | __main__:main:77 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:27:55.894 | SUCCESS  | data_pipeline:generate_synthetic_dataset:159 - Generated synthetic dataset: 10,000 rows, 37 cols, 300 anomalies
+2026-10-06 20:27:56.061 | INFO     | data_pipeline:run:205 - Data Quality Report | Rows: 10,000 | Missing cols: 31 | Duplicates: 0
+2026-10-06 20:27:56.066 | INFO     | __main__:main:94 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:27:56.067 | INFO     | __main__:main:95 - STEP 2/6 — Feature Engineering
+2026-10-06 20:27:56.067 | INFO     | __main__:main:96 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:27:56.091 | DEBUG    | data_pipeline:add_temporal_features:255 - Added 8 temporal features from 'timestamp'
+2026-10-06 20:27:56.125 | SUCCESS  | __main__:main:103 - Feature engineering complete: 51 total features
+2026-10-06 20:27:56.126 | INFO     | __main__:main:108 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:27:56.126 | INFO     | __main__:main:109 - STEP 3/6 — Preprocessing Pipeline
+2026-10-06 20:27:56.126 | INFO     | __main__:main:110 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:28:04.496 | SUCCESS  | data_pipeline:build:346 - Preprocessing complete | Input: (10000, 47) → Output: (10000, 56)
+2026-10-06 20:28:04.522 | INFO     | data_pipeline:save:358 - Preprocessor saved → models/saved/preprocessor.joblib
+2026-10-06 20:28:04.522 | SUCCESS  | __main__:main:123 - Train: (7200, 56) | Val: (800, 56) | Test: (2000, 56)
+2026-10-06 20:28:04.523 | INFO     | __main__:main:128 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:28:04.523 | INFO     | __main__:main:129 - STEP 4/6 — Ensemble Model Training
+2026-10-06 20:28:04.524 | INFO     | __main__:main:130 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:28:05.530 | INFO     | models:train_all:400 - Training xgboost...
+2026-10-06 20:29:01.296 | SUCCESS  | models:train_all:423 -   xgboost                   | CV F1: 0.7955±0.0113 | Test F1: 0.8034
+2026-10-06 20:29:14.924 | INFO     | models:train_all:400 - Training lightgbm...
+2026-10-06 20:29:45.004 | SUCCESS  | models:train_all:423 -   lightgbm                  | CV F1: 0.7937±0.0065 | Test F1: 0.7946
+2026-10-06 20:33:59.674 | INFO     | __main__:main:75 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:33:59.675 | INFO     | __main__:main:76 - STEP 1/6 — Data Ingestion & Quality Analysis
+2026-10-06 20:33:59.675 | INFO     | __main__:main:77 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:33:59.782 | SUCCESS  | data_pipeline:generate_synthetic_dataset:159 - Generated synthetic dataset: 10,000 rows, 37 cols, 300 anomalies
+2026-10-06 20:33:59.894 | INFO     | data_pipeline:run:205 - Data Quality Report | Rows: 10,000 | Missing cols: 31 | Duplicates: 0
+2026-10-06 20:33:59.896 | INFO     | __main__:main:94 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:33:59.896 | INFO     | __main__:main:95 - STEP 2/6 — Feature Engineering
+2026-10-06 20:33:59.896 | INFO     | __main__:main:96 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:33:59.924 | DEBUG    | data_pipeline:add_temporal_features:255 - Added 8 temporal features from 'timestamp'
+2026-10-06 20:33:59.966 | SUCCESS  | __main__:main:103 - Feature engineering complete: 51 total features
+2026-10-06 20:33:59.967 | INFO     | __main__:main:108 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:33:59.967 | INFO     | __main__:main:109 - STEP 3/6 — Preprocessing Pipeline
+2026-10-06 20:33:59.967 | INFO     | __main__:main:110 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:34:08.817 | SUCCESS  | data_pipeline:build:346 - Preprocessing complete | Input: (10000, 47) → Output: (10000, 56)
+2026-10-06 20:34:08.841 | INFO     | data_pipeline:save:358 - Preprocessor saved → models/saved/preprocessor.joblib
+2026-10-06 20:34:08.841 | SUCCESS  | __main__:main:123 - Train: (7200, 56) | Val: (800, 56) | Test: (2000, 56)
+2026-10-06 20:34:08.842 | INFO     | __main__:main:128 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:34:08.842 | INFO     | __main__:main:129 - STEP 4/6 — Ensemble Model Training
+2026-10-06 20:34:08.843 | INFO     | __main__:main:130 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:34:10.146 | INFO     | models:train_all:402 - Training xgboost...
+2026-10-06 20:35:05.787 | SUCCESS  | models:train_all:425 -   xgboost                   | CV F1: 0.7955±0.0113 | Test F1: 0.8034
+2026-10-06 20:35:14.647 | INFO     | models:train_all:402 - Training lightgbm...
+2026-10-06 20:35:43.598 | SUCCESS  | models:train_all:425 -   lightgbm                  | CV F1: 0.7937±0.0065 | Test F1: 0.7946
+2026-10-06 20:35:53.051 | INFO     | models:train_all:402 - Training random_forest...
+2026-10-06 20:36:05.706 | SUCCESS  | models:train_all:425 -   random_forest             | CV F1: 0.7445±0.0148 | Test F1: 0.7598
+2026-10-06 20:39:04.727 | INFO     | __main__:main:75 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:04.728 | INFO     | __main__:main:76 - STEP 1/6 — Data Ingestion & Quality Analysis
+2026-10-06 20:39:04.728 | INFO     | __main__:main:77 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:04.820 | SUCCESS  | data_pipeline:generate_synthetic_dataset:159 - Generated synthetic dataset: 10,000 rows, 37 cols, 300 anomalies
+2026-10-06 20:39:04.934 | INFO     | data_pipeline:run:205 - Data Quality Report | Rows: 10,000 | Missing cols: 31 | Duplicates: 0
+2026-10-06 20:39:04.935 | INFO     | __main__:main:94 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:04.935 | INFO     | __main__:main:95 - STEP 2/6 — Feature Engineering
+2026-10-06 20:39:04.936 | INFO     | __main__:main:96 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:04.974 | DEBUG    | data_pipeline:add_temporal_features:255 - Added 8 temporal features from 'timestamp'
+2026-10-06 20:39:05.009 | SUCCESS  | __main__:main:103 - Feature engineering complete: 51 total features
+2026-10-06 20:39:05.009 | INFO     | __main__:main:108 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:05.010 | INFO     | __main__:main:109 - STEP 3/6 — Preprocessing Pipeline
+2026-10-06 20:39:05.010 | INFO     | __main__:main:110 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:13.435 | SUCCESS  | data_pipeline:build:346 - Preprocessing complete | Input: (10000, 47) → Output: (10000, 56)
+2026-10-06 20:39:13.462 | INFO     | data_pipeline:save:358 - Preprocessor saved → models/saved/preprocessor.joblib
+2026-10-06 20:39:13.462 | SUCCESS  | __main__:main:123 - Train: (7200, 56) | Val: (800, 56) | Test: (2000, 56)
+2026-10-06 20:39:13.463 | INFO     | __main__:main:128 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:13.463 | INFO     | __main__:main:129 - STEP 4/6 — Ensemble Model Training
+2026-10-06 20:39:13.463 | INFO     | __main__:main:130 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:39:14.474 | INFO     | models:train_all:402 - Training xgboost...
+2026-10-06 20:40:09.437 | SUCCESS  | models:train_all:425 -   xgboost                   | CV F1: 0.7955±0.0113 | Test F1: 0.8034
+2026-10-06 20:40:18.255 | INFO     | models:train_all:402 - Training lightgbm...
+2026-10-06 20:40:47.557 | SUCCESS  | models:train_all:425 -   lightgbm                  | CV F1: 0.7937±0.0065 | Test F1: 0.7946
+2026-10-06 20:40:57.006 | INFO     | models:train_all:402 - Training random_forest...
+2026-10-06 20:41:09.572 | SUCCESS  | models:train_all:425 -   random_forest             | CV F1: 0.7445±0.0148 | Test F1: 0.7598
+2026-10-06 20:43:24.292 | INFO     | __main__:main:75 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:24.293 | INFO     | __main__:main:76 - STEP 1/6 — Data Ingestion & Quality Analysis
+2026-10-06 20:43:24.293 | INFO     | __main__:main:77 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:24.389 | SUCCESS  | data_pipeline:generate_synthetic_dataset:159 - Generated synthetic dataset: 10,000 rows, 37 cols, 300 anomalies
+2026-10-06 20:43:24.492 | INFO     | data_pipeline:run:205 - Data Quality Report | Rows: 10,000 | Missing cols: 31 | Duplicates: 0
+2026-10-06 20:43:24.494 | INFO     | __main__:main:94 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:24.494 | INFO     | __main__:main:95 - STEP 2/6 — Feature Engineering
+2026-10-06 20:43:24.494 | INFO     | __main__:main:96 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:24.524 | DEBUG    | data_pipeline:add_temporal_features:255 - Added 8 temporal features from 'timestamp'
+2026-10-06 20:43:24.551 | SUCCESS  | __main__:main:103 - Feature engineering complete: 51 total features
+2026-10-06 20:43:24.552 | INFO     | __main__:main:108 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:24.552 | INFO     | __main__:main:109 - STEP 3/6 — Preprocessing Pipeline
+2026-10-06 20:43:24.552 | INFO     | __main__:main:110 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:33.084 | SUCCESS  | data_pipeline:build:346 - Preprocessing complete | Input: (10000, 47) → Output: (10000, 56)
+2026-10-06 20:43:33.108 | INFO     | data_pipeline:save:358 - Preprocessor saved → models/saved/preprocessor.joblib
+2026-10-06 20:43:33.108 | SUCCESS  | __main__:main:123 - Train: (7200, 56) | Val: (800, 56) | Test: (2000, 56)
+2026-10-06 20:43:33.108 | INFO     | __main__:main:128 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:33.109 | INFO     | __main__:main:129 - STEP 4/6 — Ensemble Model Training
+2026-10-06 20:43:33.109 | INFO     | __main__:main:130 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:43:34.200 | INFO     | models:train_all:402 - Training xgboost...
+2026-10-06 20:44:30.152 | SUCCESS  | models:train_all:425 -   xgboost                   | CV F1: 0.7955±0.0113 | Test F1: 0.8034
+2026-10-06 20:44:38.608 | INFO     | models:train_all:402 - Training lightgbm...
+2026-10-06 20:45:08.991 | SUCCESS  | models:train_all:425 -   lightgbm                  | CV F1: 0.7937±0.0065 | Test F1: 0.7946
+2026-10-06 20:45:19.117 | INFO     | models:train_all:402 - Training random_forest...
+2026-10-06 20:45:31.744 | SUCCESS  | models:train_all:425 -   random_forest             | CV F1: 0.7445±0.0148 | Test F1: 0.7598
+2026-10-06 20:45:40.999 | INFO     | models:train_all:402 - Training gradient_boosting...
+2026-10-06 20:49:12.028 | SUCCESS  | models:train_all:425 -   gradient_boosting         | CV F1: 0.7733±0.0079 | Test F1: 0.7856
+2026-10-06 20:49:24.691 | SUCCESS  | models:train_all:453 - Best model: xgboost
+2026-10-06 20:49:24.692 | SUCCESS  | __main__:main:143 - Model Comparison:
+2026-10-06 20:49:24.693 | SUCCESS  | __main__:main:144 - ───────────────────────────────────────────────────────
+2026-10-06 20:49:24.693 | SUCCESS  | __main__:main:146 -   xgboost                   | F1: 0.8034 | Acc: 0.8235
+2026-10-06 20:49:24.694 | SUCCESS  | __main__:main:146 -   lightgbm                  | F1: 0.7946 | Acc: 0.8145
+2026-10-06 20:49:24.694 | SUCCESS  | __main__:main:146 -   random_forest             | F1: 0.7598 | Acc: 0.7790
+2026-10-06 20:49:24.694 | SUCCESS  | __main__:main:146 -   gradient_boosting         | F1: 0.7856 | Acc: 0.8045
+2026-10-06 20:49:24.695 | SUCCESS  | __main__:main:147 - ───────────────────────────────────────────────────────
+2026-10-06 20:49:24.695 | SUCCESS  | __main__:main:148 -   🏆 Best: xgboost
+2026-10-06 20:49:24.765 | INFO     | models:save_best:483 - Best model (xgboost) saved → models/saved/best_model.joblib
+2026-10-06 20:49:26.567 | SUCCESS  | models:explain_with_shap:477 - SHAP explanations computed for 200 samples
+2026-10-06 20:49:26.575 | SUCCESS  | __main__:main:155 - SHAP explanations computed for 100 test samples
+2026-10-06 20:49:26.575 | INFO     | __main__:main:161 - Training Deep Learning model (PyTorch)...
+2026-10-06 20:49:32.341 | INFO     | models:fit:171 -   Epoch  10/30 | Loss: 0.6860 | Val Acc: 0.7600
+2026-10-06 20:49:37.970 | INFO     | models:fit:171 -   Epoch  20/30 | Loss: 0.5581 | Val Acc: 0.8150
+2026-10-06 20:49:43.075 | INFO     | models:fit:171 -   Epoch  30/30 | Loss: 0.5348 | Val Acc: 0.8075
+2026-10-06 20:49:43.075 | SUCCESS  | models:fit:173 - Deep learning training complete | Final val acc: 0.8075
+2026-10-06 20:49:43.111 | INFO     | models:save:202 - Deep net saved → models/saved/deep_net.pt
+2026-10-06 20:49:43.112 | SUCCESS  | __main__:main:177 -   Deep Learning | F1: 0.7984 | Acc: 0.8185
+2026-10-06 20:49:43.112 | INFO     | __main__:main:183 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:49:43.112 | INFO     | __main__:main:184 - STEP 5/6 — Anomaly Detection Engine
+2026-10-06 20:49:43.113 | INFO     | __main__:main:185 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:49:43.821 | INFO     | models:fit:246 -   ✓ isolation_forest fitted
+2026-10-06 20:49:46.349 | INFO     | models:fit:246 -   ✓ local_outlier_factor fitted
+2026-10-06 20:49:46.727 | INFO     | models:fit:246 -   ✓ one_class_svm fitted
+2026-10-06 20:49:46.727 | SUCCESS  | models:fit:247 - Anomaly Detection Engine fitted on 7,200 samples
+2026-10-06 20:49:47.014 | SUCCESS  | models:predict:271 - Anomaly detection: 100 / 2,000 flagged (5.00%)
+2026-10-06 20:49:47.117 | INFO     | models:save:277 - Anomaly engine saved → models/saved/anomaly_engine.joblib
+2026-10-06 20:49:47.123 | SUCCESS  | __main__:main:200 - Anomaly Detection F1: 0.0390
+2026-10-06 20:49:47.123 | INFO     | __main__:main:206 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:49:47.124 | INFO     | __main__:main:207 - STEP 6/6 — NLP & IBM Watson Integration
+2026-10-06 20:49:47.125 | INFO     | __main__:main:208 - ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-10-06 20:49:47.126 | INFO     | nlp_engine:ingest_documents:349 - Ingesting 40 documents...
+2026-10-06 20:50:59.151 | INFO     | nlp_engine:load_model:125 - Loaded SBERT model: sentence-transformers/all-MiniLM-L6-v2
+2026-10-06 20:50:59.364 | INFO     | nlp_engine:embed:147 - Embedded 40 documents → shape (40, 384)
+2026-10-06 20:51:00.552 | SUCCESS  | nlp_engine:fit:186 - LDA fitted: 8 topics from 40 documents
+2026-10-06 20:51:00.607 | SUCCESS  | nlp_engine:ingest_documents:378 - Document Intelligence: 40 docs processed into 5 clusters
+2026-10-06 20:51:00.608 | SUCCESS  | __main__:main:224 - Documents: 40 | Clusters: 5
+2026-10-06 20:51:00.608 | WARNING  | nlp_engine:connect:274 - Watson credentials not set — running in offline/demo mode
+2026-10-06 20:51:00.609 | SUCCESS  | __main__:main:229 - Watson Insight: [IBM Granite Demo] Processed prompt (270 chars). In production, this calls IBM watsonx.ai Granite-13...
+2026-10-06 20:51:00.619 | WARNING  | time_series:detect_drift:168 - Drift detected in model_accuracy: z=4.46
+2026-10-06 20:51:00.620 | INFO     | __main__:main:240 - KPI [model_accuracy           ] mean=0.9109 | drift=True
+2026-10-06 20:51:00.621 | INFO     | __main__:main:240 - KPI [api_latency_ms           ] mean=123.2136 | drift=False
+2026-10-06 20:51:00.623 | WARNING  | time_series:detect_drift:168 - Drift detected in anomaly_rate: z=2.97
+2026-10-06 20:51:00.623 | INFO     | __main__:main:240 - KPI [anomaly_rate             ] mean=0.0337 | drift=True
+2026-10-06 20:51:00.629 | SUCCESS  | __main__:main:251 - ════════════════════════════════════════════════════════════
+2026-10-06 20:51:00.629 | SUCCESS  | __main__:main:252 -   ✅ Full pipeline completed in 471.1s
+2026-10-06 20:51:00.630 | SUCCESS  | __main__:main:253 -   📊 Results saved to data/artifacts/training_results.json
+2026-10-06 20:51:00.631 | SUCCESS  | __main__:main:254 -   🏆 Best model: xgboost
+2026-10-06 20:51:00.631 | SUCCESS  | __main__:main:255 -   🚀 Start API: cd api && python main.py
+2026-10-06 20:51:00.631 | SUCCESS  | __main__:main:256 - ════════════════════════════════════════════════════════════
